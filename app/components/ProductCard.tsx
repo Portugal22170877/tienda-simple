@@ -22,14 +22,27 @@ export default function ProductCard({ id, title, price, image }: ProductCardProp
   return (
     <div className="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
       {/* Image Container */}
-      <div className="relative overflow-hidden bg-gray-100">
+      <div className="relative overflow-hidden bg-gradient-to-br from-indigo-100 to-purple-100">
         <img
           src={image}
           alt={title}
-          className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300"
+          className="w-full h-56 object-contain p-4 group-hover:scale-110 transition-transform duration-300"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.style.display = 'none';
+            const parent = target.parentElement;
+            if (parent) {
+              parent.innerHTML = `<div class="w-full h-56 flex items-center justify-center text-6xl">${
+                id === 1 ? '👕' : id === 2 ? '🧢' : id === 3 ? '👟' : 
+                id === 4 ? '🎒' : id === 5 ? '🧥' : id === 6 ? '⌚' :
+                id === 7 ? '👖' : id === 8 ? '🕶️' : id === 9 ? '🧥' :
+                id === 10 ? '👟' : id === 11 ? '👕' : '🎧'
+              }</div>`;
+            }
+          }}
         />
         {/* Overlay on hover */}
-        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300" />
+        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 pointer-events-none" />
       </div>
 
       {/* Content */}

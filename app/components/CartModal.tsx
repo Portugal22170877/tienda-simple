@@ -49,11 +49,26 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
                     key={index}
                     className="flex gap-4 p-4 border rounded-lg hover:shadow-md transition"
                   >
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-20 h-20 object-cover rounded"
-                    />
+                    <div className="w-20 h-20 bg-gradient-to-br from-indigo-100 to-purple-100 rounded flex items-center justify-center flex-shrink-0">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-contain p-2"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent) {
+                            parent.innerHTML = `<span class="text-4xl">${
+                              item.id === 1 ? '👕' : item.id === 2 ? '🧢' : item.id === 3 ? '👟' : 
+                              item.id === 4 ? '🎒' : item.id === 5 ? '🧥' : item.id === 6 ? '⌚' :
+                              item.id === 7 ? '👖' : item.id === 8 ? '🕶️' : item.id === 9 ? '🧥' :
+                              item.id === 10 ? '👟' : item.id === 11 ? '👕' : '🎧'
+                            }</span>`;
+                          }
+                        }}
+                      />
+                    </div>
                     <div className="flex-1">
                       <h3 className="font-semibold">{item.title}</h3>
                       <p className="text-indigo-600 font-bold">${item.price}</p>
