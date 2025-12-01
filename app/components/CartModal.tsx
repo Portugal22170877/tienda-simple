@@ -1,5 +1,7 @@
 "use client";
 import { useCart } from "../context/CartContext";
+import { useEffect } from "react";
+import { trackViewCart, trackRemoveFromCart, trackBeginCheckout } from "../utils/analytics";
 
 interface CartModalProps {
   isOpen: boolean;
@@ -9,9 +11,24 @@ interface CartModalProps {
 export default function CartModal({ isOpen, onClose }: CartModalProps) {
   const { cart, removeFromCart, clearCart } = useCart();
 
-  if (!isOpen) return null;
-
   const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+  useEffect(() => {
+    if (isOpen && cart.length > 0) {
+      trackViewCart(cart, total);
+    }
+  }, [isOpen, cart, total]);
+
+  const handleRemoveFromCart = (item: any) => {
+    removeFromCart(item.id);
+    trackRemoveFromCart(item);
+  };
+
+  const handleCheckout = () => {
+    trackBeginCheckout(cart, total);
+  };
+
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden">
@@ -74,7 +91,7 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
                       <p className="text-indigo-600 font-bold">${item.price}</p>
                     </div>
                     <button
-                      onClick={() => removeFromCart(item.id)}
+                      onClick={() => handleRemoveFromCart(item)}
                       className="text-red-500 hover:text-red-700"
                     >
                       🗑️
@@ -92,7 +109,10 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
                 <span>Total:</span>
                 <span className="text-indigo-600">${total.toFixed(2)}</span>
               </div>
-              <button className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition font-semibold">
+              <button 
+                onClick={handleCheckout}
+                className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition font-semibold"
+              >
                 Proceder al Pago
               </button>
               <button

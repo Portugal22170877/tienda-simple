@@ -2,10 +2,15 @@
 import { useCart } from "../context/CartContext";
 import { useState } from "react";
 import CartModal from "./CartModal";
+import { trackNavigation } from "../utils/analytics";
 
 export default function Navbar() {
   const { cart } = useCart();
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const handleNavClick = (destination: string) => {
+    trackNavigation(destination);
+  };
 
   return (
     <>
@@ -21,16 +26,16 @@ export default function Navbar() {
 
             {/* Navigation Links */}
             <div className="hidden md:flex space-x-8">
-              <a href="#inicio" className="text-gray-700 hover:text-indigo-600 transition">
+              <a href="#inicio" onClick={() => handleNavClick('inicio')} className="text-gray-700 hover:text-indigo-600 transition">
                 Inicio
               </a>
-              <a href="#productos" className="text-gray-700 hover:text-indigo-600 transition">
+              <a href="#productos" onClick={() => handleNavClick('productos')} className="text-gray-700 hover:text-indigo-600 transition">
                 Productos
               </a>
-              <a href="#categorias" className="text-gray-700 hover:text-indigo-600 transition">
+              <a href="#categorias" onClick={() => handleNavClick('categorias')} className="text-gray-700 hover:text-indigo-600 transition">
                 Categorías
               </a>
-              <a href="#contacto" className="text-gray-700 hover:text-indigo-600 transition">
+              <a href="#contacto" onClick={() => handleNavClick('contacto')} className="text-gray-700 hover:text-indigo-600 transition">
                 Contacto
               </a>
             </div>

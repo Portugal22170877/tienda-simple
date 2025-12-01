@@ -1,20 +1,23 @@
 "use client";
 import { useCart } from "../context/CartContext";
 import { useState } from "react";
+import { trackAddToCart } from "../utils/analytics";
 
 interface ProductCardProps {
   id: number;
   title: string;
   price: number;
   image: string;
+  category?: string;
 }
 
-export default function ProductCard({ id, title, price, image }: ProductCardProps) {
+export default function ProductCard({ id, title, price, image, category }: ProductCardProps) {
   const { addToCart } = useCart();
   const [isAdded, setIsAdded] = useState(false);
 
   const handleAddToCart = () => {
     addToCart({ id, title, price, image });
+    trackAddToCart({ id, title, price, category });
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 2000);
   };

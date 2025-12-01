@@ -132,6 +132,7 @@ export default function Home() {
                 title={p.title}
                 price={p.price}
                 image={p.image}
+                category={p.category}
               />
             ))}
           </div>

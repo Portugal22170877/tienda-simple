@@ -1,3 +1,6 @@
+"use client";
+import { trackCategoryClick } from "../utils/analytics";
+
 export default function Categories() {
   const categories = [
     {
@@ -26,6 +29,10 @@ export default function Categories() {
     }
   ];
 
+  const handleCategoryClick = (categoryName: string) => {
+    trackCategoryClick(categoryName);
+  };
+
   return (
     <section id="categorias" className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,6 +49,7 @@ export default function Categories() {
           {categories.map((category) => (
             <div
               key={category.name}
+              onClick={() => handleCategoryClick(category.name)}
               className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition cursor-pointer group"
             >
               <div className={`${category.color} w-16 h-16 rounded-full flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition`}>
