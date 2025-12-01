@@ -1,12 +1,13 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
+import { CartProvider } from "./context/CartContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Tienda Simple",
-  description: "Mi tienda de prueba con Next.js",
+  description: "Mi tienda de prueba con Next.js con carrito",
 };
 
 export default function RootLayout({
@@ -15,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         {/* Google Analytics */}
         <script
@@ -35,7 +36,11 @@ export default function RootLayout({
         />
       </head>
 
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <CartProvider>
+          {children}
+        </CartProvider>
+      </body>
     </html>
   );
 }
