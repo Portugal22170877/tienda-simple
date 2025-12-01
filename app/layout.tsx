@@ -6,8 +6,8 @@ import { CartProvider } from "./context/CartContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Tienda Simple",
-  description: "Mi tienda de prueba con Next.js con carrito",
+  title: "ShopPro - Tu Tienda Online de Confianza",
+  description: "Descubre los mejores productos con calidad premium. Envío gratis en pedidos superiores a $500. Compra segura y devoluciones fáciles.",
 };
 
 export default function RootLayout({
