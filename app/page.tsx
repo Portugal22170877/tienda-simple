@@ -11,7 +11,7 @@ export default function Home() {
       id: 1,
       title: "Playera Premium Negra",
       price: 299,
-      image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      image: "https://via.placeholder.com/400x400/1a1a1a/ffffff?text=Playera+Negra",
       category: "Ropa",
       rating: 4.5
     },
@@ -19,7 +19,7 @@ export default function Home() {
       id: 2,
       title: "Gorra Deportiva Azul",
       price: 199,
-      image: "https://cdn.pixabay.com/photo/2016/11/19/18/06/feet-1840619_1280.jpg",
+      image: "https://via.placeholder.com/400x400/1e40af/ffffff?text=Gorra+Azul",
       category: "Accesorios",
       rating: 4.8
     },
@@ -27,7 +27,7 @@ export default function Home() {
       id: 3,
       title: "Tenis Running Pro",
       price: 1299,
-      image: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      image: "https://via.placeholder.com/400x400/ef4444/ffffff?text=Tenis+Running",
       category: "Calzado",
       rating: 5.0
     },
@@ -35,7 +35,7 @@ export default function Home() {
       id: 4,
       title: "Mochila Urbana",
       price: 699,
-      image: "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+      image: "https://via.placeholder.com/400x400/22c55e/ffffff?text=Mochila",
       category: "Accesorios",
       rating: 4.6
     },
@@ -43,7 +43,7 @@ export default function Home() {
       id: 5,
       title: "Sudadera con Capucha",
       price: 499,
-      image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+      image: "https://via.placeholder.com/400x400/6b7280/ffffff?text=Sudadera",
       category: "Ropa",
       rating: 4.7
     },
@@ -51,7 +51,7 @@ export default function Home() {
       id: 6,
       title: "Reloj Digital Sport",
       price: 899,
-      image: "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+      image: "https://via.placeholder.com/400x400/fbbf24/000000?text=Reloj+Sport",
       category: "Accesorios",
       rating: 4.9
     },
@@ -59,7 +59,7 @@ export default function Home() {
       id: 7,
       title: "Pants Deportivo",
       price: 399,
-      image: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+      image: "https://via.placeholder.com/400x400/3b82f6/ffffff?text=Pants",
       category: "Deportes",
       rating: 4.4
     },
@@ -67,7 +67,7 @@ export default function Home() {
       id: 8,
       title: "Lentes de Sol Polarizados",
       price: 549,
-      image: "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
+      image: "https://via.placeholder.com/400x400/1f2937/ffffff?text=Lentes+Sol",
       category: "Accesorios",
       rating: 4.8
     },
@@ -75,7 +75,7 @@ export default function Home() {
       id: 9,
       title: "Chamarra Bomber",
       price: 799,
-      image: "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+      image: "https://via.placeholder.com/400x400/059669/ffffff?text=Chamarra",
       category: "Ropa",
       rating: 4.6
     },
@@ -83,7 +83,7 @@ export default function Home() {
       id: 10,
       title: "Zapatillas Casuales Blancas",
       price: 999,
-      image: "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+      image: "https://via.placeholder.com/400x400/f3f4f6/1f2937?text=Zapatillas",
       category: "Calzado",
       rating: 4.9
     },
@@ -91,7 +91,7 @@ export default function Home() {
       id: 11,
       title: "Playera Polo Gris",
       price: 349,
-      image: "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+      image: "https://via.placeholder.com/400x400/9ca3af/ffffff?text=Polo+Gris",
       category: "Ropa",
       rating: 4.3
     },
@@ -99,7 +99,7 @@ export default function Home() {
       id: 12,
       title: "Audífonos Bluetooth",
       price: 1499,
-      image: "https://cdn.pixabay.com/photo/2018/09/17/14/28/headphones-3683983_1280.jpg",
+      image: "https://via.placeholder.com/400x400/7c3aed/ffffff?text=Audifonos",
       category: "Accesorios",
       rating: 4.8
     }
